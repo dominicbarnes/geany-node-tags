@@ -1,0 +1,12 @@
+{
+  "name": "geany-node-tags",
+  "version": "0.0.0",
+  "description": "Create node.js.tags for any version of the node.js API",
+  "main": "index.js",
+  "author": "Dominic Barnes <dominic@dbarnes.info>",
+  "license": "MIT",
+  "dependencies": {
+    "async": "~0.1.22",
+    "traverse": "~0.6.3",
+  }
+}
