@@ -1,5 +1,5 @@
 var fs = require("fs"),
-    http = require("http"),
+    https = require("https"),
     path = require("path"),
     async = require("async"),
     traverse = require("traverse"),
@@ -12,7 +12,7 @@ if (version.charAt(0) !== "v") {
     version = "v" + version;
 }
 
-url = "http://nodejs.org/docs/" + version + "/api/all.json";
+url = "https://nodejs.org/docs/" + version + "/api/all.json";
 input = path.join(__dirname, "tmp", version + ".json");
 
 async.waterfall([
@@ -31,7 +31,7 @@ async.waterfall([
         fs.exists(input, function (exists) {
             if (exists) return done();
 
-            http.get(url, function (res) {
+            https.get(url, function (res) {
                 if (res.statusCode !== 200) {
                     return done(new Error("failed to download: " + url));
                 }
